@@ -91,6 +91,4 @@ public class TwentyFifthTaskTest {
         double actual = twentyFifthTask.calcSecondRoot(abd[0], abd[1], abd[2]);
         assertEquals(actual, result, 0.001);
     }
-
-
 }

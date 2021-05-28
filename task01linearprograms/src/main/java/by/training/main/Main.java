@@ -1,6 +1,5 @@
 package by.training.main;
 
-
 import by.training.tasks.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
