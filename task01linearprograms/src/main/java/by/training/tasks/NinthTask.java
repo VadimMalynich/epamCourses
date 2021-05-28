@@ -1,88 +1,26 @@
-package by.training.task09;
-
-import java.util.Scanner;
+package by.training.tasks;
 
 /**
  * Class for finding the value of an expression using a formula:
  * a / c * b / d - ( a * b - c ) / c / d
  */
-public class Task {
-    //Variable that stores entered value a
-    private double a;
-    //Variable that stores entered value b
-    private double b;
-    //Variable that stores entered value c
-    private double c;
-    //Variable that stores entered value d
-    private double d;
-    //Variable that stores the result of calculations
-    private double result;
-    //Scanner that needed to receive data stream
-    private Scanner scanner = new Scanner(System.in);
-
-    //Method that evaluates the value of an expression
-    public void calcResult() {
-        result = a / c * b / d - (a * b - c) / (c * d);
-        System.out.println("Final result = " + getResult());
+public class NinthTask {
+    public NinthTask() {
     }
 
     /**
-     * Method reads the input stream
+     * Method that evaluates the value of an expression
      *
-     * @return entered of user correct value
+     * @param a double value one of the variables
+     * @param b double value one of the variables
+     * @param c double value one of the variables
+     * @param d double value one of the variables
+     * @return calculation result of expression
      */
-    public double enterValue() {
-        double value;
-        while (!scanner.hasNextDouble()) {
-            System.out.print("No valid value was entered\nTry again: ");
-            scanner.next();
+    public double calcResult(double a, double b, double c, double d) {
+        if (c == 0 || d == 0) {
+            throw new IllegalArgumentException("One of the variables in the denominator is 0");
         }
-        value = scanner.nextDouble();
-        return value;
-    }
-
-    //Method that close scanner
-    public void closeScanner() {
-        scanner.close();
-    }
-
-    public double getA() {
-        return a;
-    }
-
-    public void setA(double a) {
-        this.a = a;
-    }
-
-    public double getB() {
-        return b;
-    }
-
-    public void setB(double b) {
-        this.b = b;
-    }
-
-    public double getC() {
-        return c;
-    }
-
-    public void setC(double c) {
-        this.c = c;
-    }
-
-    public double getD() {
-        return d;
-    }
-
-    public void setD(double d) {
-        this.d = d;
-    }
-
-    public double getResult() {
-        return result;
-    }
-
-    public void setResult(double result) {
-        this.result = result;
+        return a / c * b / d - (a * b - c) / (c * d);
     }
 }

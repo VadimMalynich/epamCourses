@@ -1,29 +1,38 @@
-package by.training.task33;
+package by.training.tasks;
 
-import java.util.Scanner;
+public class ThirtyThirdTask {
 
-public class Task {
-    private String a;
+    public ThirtyThirdTask() {
+    }
 
     /**
-     * Method for finding serial number of a symbol,
-     * and finding the previous and next symbols based on the found serial number
+     * Method for finding serial number of a symbol
+     *
+     * @param str Entered symbols by user
+     * @return symbol serial number
      */
-    public void getPositions() {
-        char symbol = a.charAt(0);
-        int serialNumber = (int) symbol;
-        System.out.println("Your input symbol: " + a.substring(0, 1) + " has serial number: " + serialNumber);
-        serialNumber--;
-        System.out.println("Previous symbol: " + (char) serialNumber + " has serial number: " + serialNumber);
-        serialNumber += 2;
-        System.out.println("Previous symbol: " + (char) serialNumber + " has serial number: " + serialNumber);
+    public int getPositions(String str) {
+        char symbol = str.charAt(0);
+        return (int) symbol;
     }
 
-    public String getA() {
-        return a;
+    /**
+     * finding the previous symbol based on the found serial number
+     *
+     * @param symbol serial number of entered symbol
+     * @return previous symbol
+     */
+    public char getPreviousSymbol(int symbol) {
+        return (char) --symbol;
     }
 
-    public void setA(String a) {
-        this.a = a;
+    /**
+     * finding the next symbols based on the found serial number
+     *
+     * @param symbol serial number of entered symbol
+     * @return previous symbol
+     */
+    public char getNextSymbol(int symbol) {
+        return (char) ++symbol;
     }
 }
