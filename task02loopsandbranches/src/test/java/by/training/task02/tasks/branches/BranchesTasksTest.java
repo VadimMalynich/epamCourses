@@ -1,4 +1,4 @@
-package by.training.tasks.branches;
+package by.training.task02.tasks.branches;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

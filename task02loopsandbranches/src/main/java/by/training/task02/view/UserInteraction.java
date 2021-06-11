@@ -1,4 +1,4 @@
-package by.training.view;
+package by.training.task02.view;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

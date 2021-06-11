@@ -20,19 +20,19 @@
         <Root level="error">
             <AppenderRef ref="Console"/>
         </Root>
-        <Logger name="by.training.main.Main" level="all"
+        <Logger name="by.training.task02.main.Main" level="all"
                 additivity="true">
             <AppenderRef ref="TxtFile"/>
         </Logger>
-        <Logger name="by.training.view.BranchesMenu" level="all"
+        <Logger name="by.training.task02.view.BranchesMenu" level="all"
                 additivity="true">
             <AppenderRef ref="TxtFile"/>
         </Logger>
-        <Logger name="by.training.view.CyclesMenu" level="all"
+        <Logger name="by.training.task02.view.CyclesMenu" level="all"
                 additivity="true">
             <AppenderRef ref="TxtFile"/>
         </Logger>
-        <Logger name="by.training.view.UserInteraction" level="all"
+        <Logger name="by.training.task02.view.UserInteraction" level="all"
                 additivity="true">
             <AppenderRef ref="TxtFile"/>
         </Logger>

@@ -1,4 +1,4 @@
-package by.training.tasks.cycles;
+package by.training.task02.tasks.cycles;
 
 public class CyclesTasks {
 

@@ -1,6 +1,6 @@
-package by.training.view;
+package by.training.task02.view;
 
-import by.training.tasks.branches.BranchesTasks;
+import by.training.task02.tasks.branches.BranchesTasks;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -1,8 +1,8 @@
-package by.training.main;
+package by.training.task02.main;
 
-import by.training.view.BranchesMenu;
-import by.training.view.CyclesMenu;
-import by.training.view.UserInteraction;
+import by.training.task02.view.BranchesMenu;
+import by.training.task02.view.CyclesMenu;
+import by.training.task02.view.UserInteraction;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
