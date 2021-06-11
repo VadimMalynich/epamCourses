@@ -74,7 +74,6 @@ public class FirstTaskTest {
                 {new double[]{59.3654, 0}, 0},
                 {new double[]{-23.365, 0}, 0},
                 {new double[]{0, 0}, 0},
-                {new double[]{-23.36, 23.36}, -1},
         };
     }
 

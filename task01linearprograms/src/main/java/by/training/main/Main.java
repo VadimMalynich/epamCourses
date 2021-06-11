@@ -6,16 +6,20 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
 
-// Class for creating an instance of an object and using it to interact with the user
+/**
+ * Class for creating an instance of an object and using it to interact with the user
+ */
 public class Main {
     private static final Logger userLogger = LogManager.getLogger(Main.class);
-    private static final String MENU = "\n1. Sum, difference, product, quotient;\n" +
-            "2. Calculating the value of an expression;\n" +
-            "3. Average and geometric mean;\n" +
-            "4. Quadratic equation;\n" +
-            "5. Serial number of symbol;\n" +
-            "6. Exit.\n\n" +
-            "Your choice: ";
+    private static final String MENU = """
+            1. Sum, difference, product, quotient;
+            2. Calculating the value of an expression;
+            3. Average and geometric mean;
+            4. Quadratic equation;
+            5. Serial number of symbol;
+            6. Exit.
+                        
+            Your choice: """;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -123,7 +127,7 @@ public class Main {
 
     public static int enterChoice(Scanner scanner) {
         while (!scanner.hasNextInt()) {
-            userLogger.trace("No valid int value was entered");
+            userLogger.info("No valid int value was entered");
             System.out.println("No valid value was entered\nTry again: ");
             scanner.next();
         }

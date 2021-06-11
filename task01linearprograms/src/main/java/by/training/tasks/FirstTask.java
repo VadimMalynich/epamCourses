@@ -1,6 +1,8 @@
 package by.training.tasks;
 
-//Class intended to find sum, difference, product and quotient between x and y
+/**
+ * Class intended to find sum, difference, product and quotient between x and y
+ */
 public class FirstTask {
 
     public FirstTask() {
