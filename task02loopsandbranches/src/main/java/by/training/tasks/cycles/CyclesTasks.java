@@ -1,6 +1,7 @@
 package by.training.tasks.cycles;
 
 public class CyclesTasks {
+
     /**
      * Method write numbers from a to b in string
      *
@@ -75,7 +76,7 @@ public class CyclesTasks {
         }
         long factorial = 1;
         if (n == 0) {
-            return 1;
+            return factorial;
         } else {
             for (int i = 1; i <= n; i++) {
                 factorial *= i;

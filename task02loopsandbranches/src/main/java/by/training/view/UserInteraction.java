@@ -1,10 +1,13 @@
-package by.training.service;
+package by.training.view;
 
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Scanner;
 
 public class UserInteraction {
+    private static final Logger logger = LogManager.getLogger(UserInteraction.class);
+
     private Scanner scanner = new Scanner(System.in);
     private String menu = "1. Branches;\n2. Cycles;\n3. Exit.\n\nYour choice: ";
     private String branchesMenu = """
@@ -27,7 +30,7 @@ public class UserInteraction {
                         
             Your choice: """;
 
-    public int enterInt(Logger logger) {
+    public int enterInt() {
         while (!scanner.hasNextInt()) {
             logger.error("No valid int value was entered");
             System.out.print("No valid value was entered\nTry again: ");
@@ -36,7 +39,7 @@ public class UserInteraction {
         return scanner.nextInt();
     }
 
-    public double enterDouble(Logger logger) {
+    public double enterDouble() {
         while (!scanner.hasNextDouble()) {
             logger.error("No valid double value was entered");
             System.out.print("No valid value was entered (format d,d)\nTry again: ");
@@ -45,7 +48,7 @@ public class UserInteraction {
         return scanner.nextDouble();
     }
 
-    public long enterLong(Logger logger) {
+    public long enterLong() {
         while (!scanner.hasNextLong()) {
             logger.error("No valid long value was entered");
             System.out.print("No valid value was entered\nTry again: ");
@@ -57,7 +60,6 @@ public class UserInteraction {
     public void printMenu() {
         System.out.print(menu);
     }
-
 
     public void printBranchesMenu() {
         System.out.print(branchesMenu);

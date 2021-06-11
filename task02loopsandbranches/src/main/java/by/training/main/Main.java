@@ -1,8 +1,8 @@
 package by.training.main;
 
-import by.training.service.BranchesMenu;
-import by.training.service.CyclesMenu;
-import by.training.service.UserInteraction;
+import by.training.view.BranchesMenu;
+import by.training.view.CyclesMenu;
+import by.training.view.UserInteraction;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,13 +17,13 @@ public class Main {
         boolean menuFlag = true;
         while (menuFlag) {
             userInteraction.printMenu();
-            menuChoice = userInteraction.enterInt(userLogger);
+            menuChoice = userInteraction.enterInt();
             switch (menuChoice) {
                 case 1:
-                    branchesMenu.doBranchesTasks(userLogger);
+                    branchesMenu.doBranchesTasks();
                     break;
                 case 2:
-                    cyclesMenu.doCyclesTasks(userLogger);
+                    cyclesMenu.doCyclesTasks();
                     break;
                 case 3:
                     menuFlag = false;

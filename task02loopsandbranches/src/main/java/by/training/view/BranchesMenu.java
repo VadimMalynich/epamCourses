@@ -1,9 +1,12 @@
-package by.training.service;
+package by.training.view;
 
 import by.training.tasks.branches.BranchesTasks;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class BranchesMenu {
+    private static final Logger userLogger = LogManager.getLogger(BranchesMenu.class);
+
     private BranchesTasks branchesTasks;
     private UserInteraction userInteraction;
     private boolean branchesFlag;
@@ -11,33 +14,33 @@ public class BranchesMenu {
     public BranchesMenu() {
         branchesTasks = new BranchesTasks();
         userInteraction = new UserInteraction();
-        branchesFlag= true;
+        branchesFlag = true;
     }
 
-    public void doBranchesTasks(Logger userLogger){
+    public void doBranchesTasks() {
         int branchesChoice;
         int a;
         int b;
         while (isBranchesFlag()) {
             try {
                 userInteraction.printBranchesMenu();
-                branchesChoice = userInteraction.enterInt(userLogger);
+                branchesChoice = userInteraction.enterInt();
                 switch (branchesChoice) {
                     case 1:
                         System.out.print("Enter first value: ");
-                        a = userInteraction.enterInt(userLogger);
+                        a = userInteraction.enterInt();
                         System.out.print("Enter second value: ");
-                        b = userInteraction.enterInt(userLogger);
+                        b = userInteraction.enterInt();
                         System.out.println("Biggest value is " + branchesTasks.comparison(a, b));
                         break;
                     case 2:
                         int c;
                         System.out.print("Enter first side: ");
-                        a = userInteraction.enterInt(userLogger);
+                        a = userInteraction.enterInt();
                         System.out.print("Enter second side: ");
-                        b = userInteraction.enterInt(userLogger);
+                        b = userInteraction.enterInt();
                         System.out.print("Enter third side: ");
-                        c = userInteraction.enterInt(userLogger);
+                        c = userInteraction.enterInt();
                         if (branchesTasks.isEquilateralTriangle(a, b, c)) {
                             System.out.println("Triangle have 3 equal side!");
                         } else {
@@ -46,9 +49,9 @@ public class BranchesMenu {
                         break;
                     case 3:
                         System.out.print("Enter first value: ");
-                        a = userInteraction.enterInt(userLogger);
+                        a = userInteraction.enterInt();
                         System.out.print("Enter second value: ");
-                        b = userInteraction.enterInt(userLogger);
+                        b = userInteraction.enterInt();
                         int temp = branchesTasks.checkNumbersEquals(a, b);
                         if (temp == 0) {
                             System.out.println("The values are the same therefore a = b = " + temp);
@@ -61,12 +64,12 @@ public class BranchesMenu {
                     case 4:
                         double temperature;
                         System.out.print("Enter temperature: ");
-                        temperature = userInteraction.enterDouble(userLogger);
+                        temperature = userInteraction.enterDouble();
                         System.out.println(branchesTasks.checkTemperatureForNormal(temperature));
                         break;
                     case 5:
                         System.out.print("Enter password: ");
-                        a = userInteraction.enterInt(userLogger);
+                        a = userInteraction.enterInt();
                         System.out.println(branchesTasks.checkPassword(a));
                         break;
                     case 6:
