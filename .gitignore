@@ -6,4 +6,6 @@
 .idea
 /target/
 /logs/
+/task03arraysdecomposition/target/
+/task03arraysdecomposition/task03arraysdecomposition.iml
 /task03arraysdecomposition/logs/
