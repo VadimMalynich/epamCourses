@@ -9,7 +9,7 @@
         </Property>
     </Properties>
     <Appenders>
-        <File name="TxtFile" fileName="logs/text.log" bufferedIO="true">
+        <File name="TxtFile" fileName="logs/task03.log" bufferedIO="true">
             <PatternLayout pattern="${patternfull}"/>
         </File>
         <Console name="Console" target="SYSTEM_OUT">
