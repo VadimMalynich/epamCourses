@@ -11,7 +11,7 @@
     <modules>
         <module>task01linearprograms</module>
         <module>task02loopsandbranches</module>
-        <module>temp</module>
+        <module>task03arraysdecomposition</module>
     </modules>
 
     <properties>
