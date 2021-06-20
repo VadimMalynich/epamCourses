@@ -1,6 +1,6 @@
-package by.training.decomposition.controller.command.impl;
+package by.training.task04.controller.command.impl;
 
-import by.training.decomposition.controller.command.Command;
+import by.training.task04.controller.command.Command;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

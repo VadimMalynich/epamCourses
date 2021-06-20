@@ -12,6 +12,7 @@
         <module>task01linearprograms</module>
         <module>task02loopsandbranches</module>
         <module>task03arraysdecomposition</module>
+        <module>task04classesuml</module>
     </modules>
 
     <properties>
