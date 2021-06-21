@@ -17,7 +17,7 @@ public class FilterDataStatus implements Command {
     public String execute(String request) {
         int status = Integer.parseInt(request.substring(request.indexOf('-') + 1));
         File fileRead = new File("./src/main/resources/data/generatedData.txt");
-        File fileWrite = new File("./src/main/resources/filteredData/sortData.txt");
+        File fileWrite = new File("./src/main/resources/filteredData/filteredData.txt");
         String response = "Data did not filter";
         ServiceFactory factory = ServiceFactory.getInstance();
         FilterDataService service = factory.getFilterDataService();

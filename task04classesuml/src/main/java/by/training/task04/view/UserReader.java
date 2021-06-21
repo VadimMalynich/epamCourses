@@ -42,7 +42,6 @@ public class UserReader {
     }
 
     public String enterString() {
-        scanner.next();
         return scanner.nextLine();
     }
 

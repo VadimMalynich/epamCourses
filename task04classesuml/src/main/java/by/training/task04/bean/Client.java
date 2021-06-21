@@ -1,5 +1,6 @@
 package by.training.task04.bean;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -8,7 +9,7 @@ public class Client {
     private String surname;
     private String name;
     private String patronymic;
-    private List<BankAccount> bankAccounts;
+    private List<BankAccount> bankAccounts = new ArrayList<>();
 
     public Client(String surname, String name, String patronymic) {
         this.surname = surname;

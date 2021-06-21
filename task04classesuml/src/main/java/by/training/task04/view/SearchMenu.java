@@ -35,8 +35,9 @@ public class SearchMenu {
                 case 2:
                     String enterFIO = rb.getString("enterFIO");
                     print.printMessage(enterFIO);
+                    reader.enterString();
                     String fio = reader.enterString();
-                    userLogger.debug(controller.executeTask("find_by_fio- " + fio));
+                    userLogger.debug(controller.executeTask("find_by_fio-" + fio));
                     break;
                 case 3:
                     if ("US".equals(locale.getCountry())) {

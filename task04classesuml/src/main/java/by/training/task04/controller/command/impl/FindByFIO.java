@@ -16,7 +16,7 @@ public class FindByFIO implements Command {
 
     @Override
     public String execute(String request) {
-        String fio = request.substring(request.indexOf(' ') + 1);
+        String fio = request.substring(request.indexOf('-') + 1);
         File file = new File("./src/main/resources/data/generatedData.txt");
         String response = "Search did not return any result";
 

@@ -10,7 +10,6 @@ import by.training.task04.service.FilterDataService;
 import by.training.task04.service.ServiceException;
 
 import java.io.File;
-import java.util.List;
 import java.util.Optional;
 
 public class FilterDataServiceImpl implements FilterDataService {
@@ -34,15 +33,17 @@ public class FilterDataServiceImpl implements FilterDataService {
         WriteToFile write = daoFactory.getWriteToFile();
         try {
             Optional<Bank> optional = read.readData(readFile);
-            Bank bank = new Bank(optional.get().getTitle(), optional.get().getBankAccounts());
             if (optional.isPresent()) {
+                Bank bank = new Bank(optional.get().getTitle());
                 for (BankAccount b : optional.get().getBankAccounts()) {
-                    if (!b.getAccountStatus().equals(status)) {
-                        bank.deleteBankAccount(b);
+                    if (b.getAccountStatus().equals(status)) {
+                        bank.addBankAccount(b);
                     }
                 }
-                optional = Optional.of(bank);
-                write.writeGenerateData(writeFile, optional.get());
+                if (bank.getBankAccounts().isEmpty()) {
+                    throw new ServiceException("No such values suitable for filter parameters");
+                }
+                write.writeGenerateData(writeFile, bank);
             }
         } catch (DAOException e) {
             throw new ServiceException(e);
@@ -67,15 +68,17 @@ public class FilterDataServiceImpl implements FilterDataService {
         WriteToFile write = daoFactory.getWriteToFile();
         try {
             Optional<Bank> optional = read.readData(readFile);
-
             if (optional.isPresent()) {
-                Bank bank = new Bank(optional.get().getTitle(), optional.get().getBankAccounts());
-                for (BankAccount b : bank.getBankAccounts()) {
-                    if (min > b.getAccountAmount() || b.getAccountAmount() > max) {
-                        optional.get().deleteBankAccount(b);
+                Bank bank = new Bank(optional.get().getTitle());
+                for (BankAccount b : optional.get().getBankAccounts()) {
+                    if (min <= b.getAccountAmount() && b.getAccountAmount() <= max) {
+                        bank.addBankAccount(b);
                     }
                 }
-                write.writeGenerateData(writeFile, optional.get());
+                if (bank.getBankAccounts().isEmpty()) {
+                    throw new ServiceException("No such values suitable for filter parameters");
+                }
+                write.writeGenerateData(writeFile, bank);
             }
         } catch (DAOException e) {
             throw new ServiceException(e);

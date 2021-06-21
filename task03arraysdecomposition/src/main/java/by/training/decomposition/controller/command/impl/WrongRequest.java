@@ -10,11 +10,6 @@ public class WrongRequest implements Command {
     @Override
     public String execute(String request) {
         userLogger.fatal(request);
-<<<<<<< HEAD
         return "This request does not exist!";
-=======
-        String message = "This request does not exist!";
-        return message;
->>>>>>> origin/master
     }
 }
