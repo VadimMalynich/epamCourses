@@ -42,7 +42,8 @@ public class BinaryMergeSort implements ArraySortingService {
             right[j] = array.getValue(m + 1 + j);
         }
 
-        int i = 0, j = 0;
+        int i = 0;
+        int j = 0;
         int k = l;
         if (isIncreasing) {
             while (i < n1 && j < n2) {
