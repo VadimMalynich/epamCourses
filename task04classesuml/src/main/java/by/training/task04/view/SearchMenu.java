@@ -20,6 +20,7 @@ public class SearchMenu {
     public Locale searchData(Locale locale) {
         Controller controller = new Controller();
         boolean flag = true;
+        String message;
         while (flag) {
             ResourceBundle rb = ResourceBundle.getBundle("langs.text", locale);
             String searchMenu = rb.getString("searchMenu");
@@ -30,14 +31,16 @@ public class SearchMenu {
                     String enterLong = rb.getString("enterAccountNumber");
                     print.printMessage(enterLong);
                     long accountNumber = reader.enterLong(rb);
-                    userLogger.debug(controller.executeTask("find_by_account_number-" + accountNumber));
+                    message = controller.executeTask("find_by_account_number-" + accountNumber);
+                    userLogger.debug(message);
                     break;
                 case 2:
                     String enterFIO = rb.getString("enterFIO");
                     print.printMessage(enterFIO);
                     reader.enterString();
                     String fio = reader.enterString();
-                    userLogger.debug(controller.executeTask("find_by_fio-" + fio));
+                    message = controller.executeTask("find_by_fio-" + fio);
+                    userLogger.debug(message);
                     break;
                 case 3:
                     if ("US".equals(locale.getCountry())) {

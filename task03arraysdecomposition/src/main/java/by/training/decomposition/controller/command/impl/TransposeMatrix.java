@@ -8,8 +8,6 @@ import by.training.decomposition.service.ServiceFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.security.Provider;
-
 public class TransposeMatrix implements Command {
     private static final Logger logger = LogManager.getLogger(TransposeMatrix.class);
 

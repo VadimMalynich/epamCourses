@@ -35,7 +35,7 @@ public class MatrixCreatorDAOTest {
     }
 
     @Test(description = "Positive scenario of filling matrix from file!", dataProvider = "testCreateFromFilePositiveProvider")
-    public void testCreateFromFilePositive(int[] sizes, int[][] res) throws DAOException {
+    public void testCreateFromFilePositive(int[] sizes, double[][] res) throws DAOException {
         Matrix actual = new Matrix(sizes[0], sizes[1]);
         Matrix result = new Matrix(res);
         String dir = "./src/main/resources/creatingfiles";
@@ -47,7 +47,7 @@ public class MatrixCreatorDAOTest {
 
     @Test(description = "Negative scenario of filling matrix from file!",
             expectedExceptions = NumberFormatException.class, dataProvider = "testCreateFromFileNegativeProvider")
-    public void testCreateFromFileNegative(int[] sizes, int[][] res) throws DAOException {
+    public void testCreateFromFileNegative(int[] sizes, double[][] res) throws DAOException {
         Matrix actual = new Matrix(sizes[0], sizes[1]);
         Matrix result = new Matrix(res);
         String dir = "./src/main/resources/creatingfiles";

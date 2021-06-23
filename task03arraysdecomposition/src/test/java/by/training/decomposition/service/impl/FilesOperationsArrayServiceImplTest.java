@@ -16,9 +16,9 @@ public class FilesOperationsArrayServiceImplTest {
     @DataProvider(name = "testCreateFromFileProvider")
     public Object[][] createDataForFillMatrixFromFileNegativePath() {
         return new Object[][]{
-                {new Object[]{new Array(5), "./src/main/resources/creatingfiles/matrix"}, new int[]{0}},
-                {new Object[]{new Array(3), "./src/main/resources/crеatingfiles/testMatrix.txt"}, new int[]{0}},
-                {new Object[]{new Array(4), "./src/main/res0urces/creatingfiles/testMatrix.txt"}, new int[]{0}},
+                {new Object[]{new Array(5), "./src/main/resources/creatingfiles/matrix"}, new double[]{0}},
+                {new Object[]{new Array(3), "./src/main/resources/crеatingfiles/testMatrix.txt"}, new double[]{0}},
+                {new Object[]{new Array(4), "./src/main/res0urces/creatingfiles/testMatrix.txt"}, new double[]{0}},
         };
     }
 
@@ -26,7 +26,7 @@ public class FilesOperationsArrayServiceImplTest {
             expectedExceptions = ServiceException.class,
             expectedExceptionsMessageRegExp = "Invalid file path for creating array!",
             dataProvider = "testCreateFromFileProvider")
-    public void testCreateFromFile(Object[] obj, int[] res) throws ServiceException {
+    public void testCreateFromFile(Object[] obj, double[] res) throws ServiceException {
         Array actual = (Array) obj[0];
         File file = new File((String) obj[1]);
         Array result = new Array(res);

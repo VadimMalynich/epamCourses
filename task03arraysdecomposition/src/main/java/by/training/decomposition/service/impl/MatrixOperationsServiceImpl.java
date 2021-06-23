@@ -59,7 +59,7 @@ public class MatrixOperationsServiceImpl implements MatrixOperationsService {
                 for (int j = 0; j < pColumns; j++) {
                     checkRange(p, i, j);
                     checkRange(q, i, j);
-                    int value = p.getElement(i, j) + q.getElement(i, j);
+                    double value = p.getElement(i, j) + q.getElement(i, j);
                     checkRange(result, i, j);
                     result.setElement(i, j, value);
                 }
@@ -69,7 +69,7 @@ public class MatrixOperationsServiceImpl implements MatrixOperationsService {
                 for (int j = 0; j < pColumns; j++) {
                     checkRange(p, i, j);
                     checkRange(q, i, j);
-                    int value = p.getElement(i, j) - q.getElement(i, j);
+                    double value = p.getElement(i, j) - q.getElement(i, j);
                     checkRange(result, i, j);
                     result.setElement(i, j, value);
                 }
@@ -86,7 +86,7 @@ public class MatrixOperationsServiceImpl implements MatrixOperationsService {
         for (int i = 0; i < columns; i++) {
             for (int j = 0; j < rows; j++) {
                 checkRange(matrix, i, j);
-                int value = matrix.getElement(j, i);
+                double value = matrix.getElement(j, i);
                 checkRange(result, i, j);
                 result.setElement(i, j, value);
             }

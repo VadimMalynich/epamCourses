@@ -28,13 +28,13 @@ public class MatrixCreatorServiceImpl implements MatrixCreatorService {
     }
 
     @Override
-    public int[][] createArray(int n, int m, int minValue, int maxValue) throws ServiceException {
+    public double[][] createArray(int n, int m, double minValue, double maxValue) throws ServiceException {
         if (n <= 0 || m <= 0) {
             throw new ServiceException("Wrong size for array creating!");
         }
         DAOFactory daoFactory = DAOFactory.getInstance();
         MatrixDao matrixDao = daoFactory.getMatrixDao();
-        int arr[][];
+        double arr[][];
         try {
             arr = matrixDao.createArray(n, m, minValue, maxValue);
         } catch (DAOException e) {
@@ -52,7 +52,7 @@ public class MatrixCreatorServiceImpl implements MatrixCreatorService {
             throw new ServiceException("Matrix has wrong size for creating from file!");
         }
         String path = f.getPath();
-        if (!path.startsWith(".\\src\\main\\resources\\creatingfiles")) {
+        if (!path.startsWith(".\\src\\main\\resources\\creatingfiles\\")) {
             throw new ServiceException("Invalid file path for creating matrix!");
         }
         DAOFactory daoFactory = DAOFactory.getInstance();

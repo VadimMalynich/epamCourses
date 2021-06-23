@@ -3,8 +3,6 @@ package by.training.decomposition.dao;
 import by.training.decomposition.dao.impl.FilesOperationsArrayDAO;
 import by.training.decomposition.dao.impl.MatrixCreatorDAO;
 
-import java.io.File;
-
 public class DAOFactory {
     private static final DAOFactory instance = new DAOFactory();
 

@@ -23,7 +23,7 @@ public class StatusChangeMenu {
         Controller controller = new Controller();
         boolean flag = true;
         int choice;
-
+        String message;
         while (flag) {
             ResourceBundle rb = ResourceBundle.getBundle("langs.text", locale);
             String menu = rb.getString("statusMenu");
@@ -31,22 +31,27 @@ public class StatusChangeMenu {
             choice = reader.enterInt(rb);
             switch (choice) {
                 case 1:
-                    userLogger.debug(controller.executeTask("block_activate_all-false"));
+                    message = controller.executeTask("block_activate_all-false");
+                    userLogger.debug(message);
                     break;
                 case 2:
-                    userLogger.debug(controller.executeTask("block_activate_all-true"));
+                    message = controller.executeTask("block_activate_all-true");
+                    userLogger.debug(message);
                     break;
                 case 3:
+
                     String blockId = rb.getString("blockID");
                     print.printMessage(blockId);
                     accountID = reader.enterInt(rb);
-                    userLogger.debug(controller.executeTask("block_activate_by_id-false " + accountID));
+                    message = controller.executeTask("block_activate_by_id-false " + accountID);
+                    userLogger.debug(message);
                     break;
                 case 4:
                     String activeId = rb.getString("activeID");
                     print.printMessage(activeId);
                     accountID = reader.enterInt(rb);
-                    userLogger.debug(controller.executeTask("block_activate_by_id-true " + accountID));
+                    message = controller.executeTask("block_activate_by_id-true " + accountID);
+                    userLogger.debug(message);
                     break;
                 case 5:
                     if ("US".equals(locale.getCountry())) {

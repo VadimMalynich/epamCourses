@@ -26,7 +26,7 @@ public interface MatrixCreatorService {
      * @return filled array
      * @throws ServiceException
      */
-    int[][] createArray(int n, int m, int minValue, int maxValue) throws ServiceException;
+    double[][] createArray(int n, int m, double minValue, double maxValue) throws ServiceException;
 
     /**
      * Method for filling {@code matrix} with data from file {@code f}

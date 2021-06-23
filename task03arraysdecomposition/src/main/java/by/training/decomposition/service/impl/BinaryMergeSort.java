@@ -32,48 +32,48 @@ public class BinaryMergeSort implements ArraySortingService {
     private void merge(Array array, int l, int m, int r, boolean isIncreasing) {
         int n1 = m - l + 1;
         int n2 = r - m;
-        int L[] = new int[n1];
-        int R[] = new int[n2];
+        double left[] = new double[n1];
+        double right[] = new double[n2];
 
         for (int i = 0; i < n1; ++i) {
-            L[i] = array.getValue(l + i);
+            left[i] = array.getValue(l + i);
         }
         for (int j = 0; j < n2; ++j) {
-            R[j] = array.getValue(m + 1 + j);
+            right[j] = array.getValue(m + 1 + j);
         }
 
         int i = 0, j = 0;
         int k = l;
         if (isIncreasing) {
             while (i < n1 && j < n2) {
-                if (L[i] <= R[j]) {
-                    array.setValue(L[i], k);
+                if (left[i] <= right[j]) {
+                    array.setValue(left[i], k);
                     i++;
                 } else {
-                    array.setValue(R[j], k);
+                    array.setValue(right[j], k);
                     j++;
                 }
                 k++;
             }
         } else {
             while (i < n1 && j < n2) {
-                if (L[i] >= R[j]) {
-                    array.setValue(L[i], k);
+                if (left[i] >= right[j]) {
+                    array.setValue(left[i], k);
                     i++;
                 } else {
-                    array.setValue(R[j], k);
+                    array.setValue(right[j], k);
                     j++;
                 }
                 k++;
             }
         }
         while (i < n1) {
-            array.setValue(L[i], k);
+            array.setValue(left[i], k);
             i++;
             k++;
         }
         while (j < n2) {
-            array.setValue(R[j], k);
+            array.setValue(right[j], k);
             j++;
             k++;
         }

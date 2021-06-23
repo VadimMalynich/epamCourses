@@ -6,13 +6,13 @@ import by.training.task04.controller.command.CommandProvider;
 public final class Controller {
     private final CommandProvider provider = new CommandProvider();
 
-    private final char paramDelimeter = '-';
+    private static final char PARAM_DELIMETER = '-';
 
     public String executeTask(String request) {
         String commandName;
         Command executionCommand;
 
-        commandName = request.substring(0, request.indexOf(paramDelimeter));
+        commandName = request.substring(0, request.indexOf(PARAM_DELIMETER));
         executionCommand = provider.takeCommand(commandName);
 
         String response;

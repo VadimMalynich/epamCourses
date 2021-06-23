@@ -1,8 +1,6 @@
 package by.training.decomposition.controller.command.impl;
 
 import by.training.decomposition.bean.Matrix;
-import by.training.decomposition.controller.command.Command;
-import by.training.decomposition.service.FilesOperationsArrayService;
 import by.training.decomposition.service.MatrixCreatorService;
 import by.training.decomposition.service.ServiceException;
 import by.training.decomposition.service.ServiceFactory;
@@ -13,6 +11,10 @@ import java.io.File;
 
 public class CreateMatrix {
     private static final Logger logger = LogManager.getLogger(CreateMatrix.class);
+
+    private CreateMatrix() {
+    }
+
 
     public static Matrix execute(int rows, int columns, String fileName) {
         String response = "Data from file load successful";

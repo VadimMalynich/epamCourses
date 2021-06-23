@@ -1,14 +1,16 @@
 package by.training.decomposition.bean;
 
-public class Matrix {
-    private int[][] a;
+import java.util.Arrays;
 
-    public Matrix(int[][] a) {
+public class Matrix {
+    private double[][] a;
+
+    public Matrix(double[][] a) {
         this.a = a;
     }
 
     public Matrix(int n, int m) {
-        a = new int[n][m];
+        a = new double[n][m];
     }
 
     public int getVerticalSize() {
@@ -19,11 +21,11 @@ public class Matrix {
         return a[0].length;
     }
 
-    public int getElement(int i, int j) {
+    public double getElement(int i, int j) {
         return a[i][j];
     }
 
-    public void setElement(int i, int j, int value) {
+    public void setElement(int i, int j, double value) {
         a[i][j] = value;
     }
 
@@ -32,8 +34,8 @@ public class Matrix {
         final String BLANK = " ";
         StringBuilder s = new StringBuilder("\nMatrix : " + a.length + "x"
                 + a[0].length + "\n");
-        for (int[] row : a) {
-            for (int value : row) {
+        for (double[] row : a) {
+            for (double value : row) {
                 s.append(value).append(BLANK);
             }
             s.append("\n");
@@ -58,11 +60,12 @@ public class Matrix {
         return true;
     }
 
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(a);
+    }
+
     private boolean checkRange(int i, int j) {
-        if (i >= 0 && i < a.length && j >= 0 && j < a[0].length) {
-            return true;
-        } else {
-            return false;
-        }
+        return (i >= 0 && i < a.length && j >= 0 && j < a[0].length);
     }
 }

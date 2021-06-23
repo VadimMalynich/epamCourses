@@ -24,8 +24,6 @@ public class Client {
         this.patronymic = patronymic;
     }
 
-
-
     public int getId() {
         return id;
     }

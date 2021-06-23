@@ -24,17 +24,16 @@ public class Bank {
         this.title = title;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
     public void addBankAccount(BankAccount account) {
         bankAccounts.add(account);
     }
 
     public void deleteBankAccount(BankAccount account) {
         bankAccounts.remove(account);
-    }
-
-
-    public String getTitle() {
-        return title;
     }
 
     public List<BankAccount> getBankAccounts() {

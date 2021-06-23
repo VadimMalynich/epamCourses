@@ -12,9 +12,9 @@ public class CreateFile {
         final int MAX_VALUE = 1000;
         final int MIN_VALUE = -1000;
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, true))) {
-            int arr[] = new int[1000];
+            double arr[] = new double[1000];
             for (int i = 0; i < arr.length; i++) {
-                arr[i] = (int) (Math.random() * (MAX_VALUE - MIN_VALUE) + MIN_VALUE);
+                arr[i] = (Math.random() * (MAX_VALUE - MIN_VALUE) + MIN_VALUE);
                 bw.write(String.valueOf(arr[i]));
                 bw.write("\n");
             }

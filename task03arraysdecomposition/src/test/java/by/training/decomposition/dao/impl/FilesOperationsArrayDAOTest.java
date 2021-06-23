@@ -17,23 +17,23 @@ public class FilesOperationsArrayDAOTest {
     @DataProvider(name = "testCreateFromFilePositiveProvider")
     public Object[][] createDataForForFillArrayFromFilePositive() {
         return new Object[][]{
-                {4, new int[]{20, -554, 854, -54}},
-                {1, new int[]{20}},
-                {10, new int[]{20, -554, 854, -54, 55, 55, 87, 36, -655, -4}},
-                {14, new int[]{20, -554, 854, -54, 55, 55, 87, 36, -655, -4, 5, 88, -6, 99}},
+                {4, new double[]{20, -554, 854, -54}},
+                {1, new double[]{20}},
+                {10, new double[]{20, -554, 854, -54, 55, 55, 87, 36, -655, -4}},
+                {14, new double[]{20, -554, 854, -54, 55, 55, 87, 36, -655, -4, 5, 88, -6, 99}},
         };
     }
 
     @DataProvider(name = "testCreateFromFileNegativeProvider")
     public Object[][] createDataForForFillArrayFromFileNegative() {
         return new Object[][]{
-                {15, new int[]{20, -554, 854, -54, 55, 55, 87, 36, -655, -4, 5, 88, -6, 99, 4554}},
-                {120, new int[]{20, -554, 854, -54, 55, 55, 87}},
+                {15, new double[]{20, -554, 854, -54, 55, 55, 87, 36, -655, -4, 5, 88, -6, 99, 4554}},
+                {120, new double[]{20, -554, 854, -54, 55, 55, 87}},
         };
     }
 
     @Test(description = "Positive scenario of filling array from file!", dataProvider = "testCreateFromFilePositiveProvider")
-    public void testCreateFromFilePositive(int size, int[] res) throws DAOException {
+    public void testCreateFromFilePositive(int size, double[] res) throws DAOException {
         Array actual = new Array(size);
         Array result = new Array(res);
         String dir = "./src/main/resources/creatingfiles";
@@ -45,7 +45,7 @@ public class FilesOperationsArrayDAOTest {
 
     @Test(description = "Negative scenario of filling array from file!", expectedExceptions = NumberFormatException.class,
             dataProvider = "testCreateFromFileNegativeProvider")
-    public void testCreateFromFileNegative(int size, int[] res) throws DAOException {
+    public void testCreateFromFileNegative(int size, double[] res) throws DAOException {
         Array actual = new Array(size);
         Array result = new Array(res);
         String dir = "./src/main/resources/creatingfiles";

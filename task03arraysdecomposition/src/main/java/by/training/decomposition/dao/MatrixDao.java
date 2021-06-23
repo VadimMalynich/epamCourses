@@ -26,7 +26,7 @@ public interface MatrixDao {
      * @return filled array
      * @throws DAOException
      */
-    int[][] createArray(int n, int m, int minValue, int maxValue) throws DAOException;
+    double[][] createArray(int n, int m, double minValue, double maxValue) throws DAOException;
 
     /**
      * Method for filling {@code matrix} with data from file {@code f}

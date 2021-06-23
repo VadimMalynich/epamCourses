@@ -8,7 +8,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ArrayMenu {
-    private static final Logger userLogger = LogManager.getLogger(MatrixMenu.class);
+    private static final Logger userLogger = LogManager.getLogger(ArrayMenu.class);
     private static final ArrayMenu instance = new ArrayMenu();
     private final UserOutput print = new UserOutput();
     private final UserReader reader = new UserReader();

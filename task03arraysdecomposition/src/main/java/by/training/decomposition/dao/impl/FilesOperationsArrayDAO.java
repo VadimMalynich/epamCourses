@@ -16,7 +16,7 @@ public class FilesOperationsArrayDAO implements ArrayDAO {
         }
         try (BufferedReader br = new BufferedReader(new FileReader(f))) {
             for (int i = 0; i < size; i++) {
-                array.setValue(Integer.parseInt(br.readLine()), i);
+                array.setValue(Double.parseDouble(br.readLine()), i);
             }
         } catch (IOException ex) {
             throw new DAOException(ex);

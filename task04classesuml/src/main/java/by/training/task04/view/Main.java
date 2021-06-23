@@ -15,7 +15,8 @@ public class Main {
         UserReader reader = new UserReader();
         UserOutput print = new UserOutput();
         Controller controller = new Controller();
-        userLogger.debug(controller.executeTask("generate_data-"));
+        String message = controller.executeTask("generate_data-");
+        userLogger.debug(message);
         boolean flag = true;
         int mainChoice;
         while (flag) {

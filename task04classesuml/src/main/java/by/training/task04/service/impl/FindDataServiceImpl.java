@@ -58,7 +58,7 @@ public class FindDataServiceImpl implements FindDataService {
         if (1000000000000000l > number || 10000000000000000l <= number) {
             throw new ServiceException("Wrong value of account number!");
         }
-        Optional<BankAccount> optionalBankAccount = null;
+        Optional<BankAccount> optionalBankAccount = Optional.empty();
         DAOFactory factory = DAOFactory.getInstance();
         ReadFromFile read = factory.getReadFromFile();
         try {

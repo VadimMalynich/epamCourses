@@ -19,6 +19,7 @@ public class SortMenu {
 
     public Locale sortData(Locale locale) {
         Controller controller = new Controller();
+        String message;
         boolean flag = true;
         while (flag) {
             ResourceBundle rb = ResourceBundle.getBundle("langs.text", locale);
@@ -27,16 +28,20 @@ public class SortMenu {
             int sortChoice = reader.enterInt(rb);
             switch (sortChoice) {
                 case 1:
-                    userLogger.debug(controller.executeTask("sort_data-number"));
+                    message = controller.executeTask("sort_data-number");
+                    userLogger.debug(message);
                     break;
                 case 2:
-                    userLogger.debug(controller.executeTask("sort_data-numberReverse"));
+                    message = controller.executeTask("sort_data-numberReverse");
+                    userLogger.debug(message);
                     break;
                 case 3:
-                    userLogger.debug(controller.executeTask("sort_data-amount"));
+                    message = controller.executeTask("sort_data-amount");
+                    userLogger.debug(message);
                     break;
                 case 4:
-                    userLogger.debug(controller.executeTask("sort_data-amountReverse"));
+                    message = controller.executeTask("sort_data-amountReverse");
+                    userLogger.debug(message);
                     break;
                 case 5:
                     if ("US".equals(locale.getCountry())) {

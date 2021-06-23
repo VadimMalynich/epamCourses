@@ -1,7 +1,6 @@
 package by.training.decomposition.controller.command.impl;
 
 import by.training.decomposition.bean.Array;
-import by.training.decomposition.controller.command.Command;
 import by.training.decomposition.service.FilesOperationsArrayService;
 import by.training.decomposition.service.ServiceException;
 import by.training.decomposition.service.ServiceFactory;
@@ -12,6 +11,9 @@ import java.io.File;
 
 public class CreateArray {
     private static final Logger logger = LogManager.getLogger(CreateArray.class);
+
+    private CreateArray() {
+    }
 
     public static Array createArray(int size) {
         String response = "Data from file load successful";

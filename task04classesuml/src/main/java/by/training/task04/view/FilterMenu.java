@@ -20,6 +20,7 @@ public class FilterMenu {
     public Locale filterData(Locale locale) {
         Controller controller = new Controller();
         boolean flag = true;
+        String message;
         while (flag) {
             ResourceBundle rb = ResourceBundle.getBundle("langs.text", locale);
 
@@ -28,19 +29,22 @@ public class FilterMenu {
             int filterChoice = reader.enterInt(rb);
             switch (filterChoice) {
                 case 1:
-                    userLogger.debug(controller.executeTask("filter_status-" + 0));
+                    message = controller.executeTask("filter_status-" + 0);
+                    userLogger.debug(message);
                     break;
                 case 2:
-                    userLogger.debug(controller.executeTask("filter_status-" + 1));
+                    message = controller.executeTask("filter_status-" + 1);
+                    userLogger.debug(message);
                     break;
                 case 3:
-                    String message = rb.getString("enterMinBalance");
-                    print.printMessage(message);
+                    String enterBalance = rb.getString("enterMinBalance");
+                    print.printMessage(enterBalance);
                     double min = reader.enterDouble(rb);
-                    message = rb.getString("enterMaxBalance");
-                    print.printMessage(message);
+                    enterBalance = rb.getString("enterMaxBalance");
+                    print.printMessage(enterBalance);
                     double max = reader.enterDouble(rb);
-                    userLogger.debug(controller.executeTask("filter_amount-" + min + " " + max));
+                    message = controller.executeTask("filter_amount-" + min + " " + max);
+                    userLogger.debug(message);
                     break;
                 case 4:
                     if ("US".equals(locale.getCountry())) {

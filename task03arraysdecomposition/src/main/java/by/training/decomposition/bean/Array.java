@@ -4,21 +4,21 @@ import java.util.Arrays;
 
 public class Array {
 
-    private int[] values;
+    private double[] values;
 
-    public Array(int[] values) {
+    public Array(double[] values) {
         this.values = values;
     }
 
     public Array(int size) {
-        values = new int[size];
+        values = new double[size];
     }
 
-    public int getValue(int index) {
+    public double getValue(int index) {
         return values[index];
     }
 
-    public void setValue(int value, int index) {
+    public void setValue(double value, int index) {
         values[index] = value;
     }
 
@@ -27,7 +27,7 @@ public class Array {
     }
 
     public void swap(int a, int b) {
-        int tmp = values[a];
+        double tmp = values[a];
         values[a] = values[b];
         values[b] = tmp;
     }

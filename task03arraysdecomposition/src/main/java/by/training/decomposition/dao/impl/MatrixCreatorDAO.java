@@ -13,18 +13,18 @@ public class MatrixCreatorDAO implements MatrixDao {
         int h = matrix.getHorizontalSize();
         for (int i = 0; i < v; i++) {
             for (int j = 0; j < h; j++) {
-                int value = (int) ((Math.random() * (maxValue - minValue)) + minValue);
+                double value = ((Math.random() * (maxValue - minValue)) + minValue);
                 matrix.setElement(i, j, value);
             }
         }
     }
 
     @Override
-    public int[][] createArray(int n, int m, int minValue, int maxValue) throws DAOException {
-        int[][] arr = new int[n][m];
+    public double[][] createArray(int n, int m, double minValue, double maxValue) throws DAOException {
+        double[][] arr = new double[n][m];
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                arr[i][j] = (int) ((Math.random() * (maxValue - minValue)) + minValue);
+                arr[i][j] =((Math.random() * (maxValue - minValue)) + minValue);
             }
         }
         return arr;
@@ -39,7 +39,7 @@ public class MatrixCreatorDAO implements MatrixDao {
         try (BufferedReader br = new BufferedReader(new FileReader(f))) {
             for (int i = 0; i < matrix.getVerticalSize(); i++) {
                 for (int j = 0; j < matrix.getHorizontalSize(); j++) {
-                    matrix.setElement(i, j, Integer.parseInt(br.readLine()));
+                    matrix.setElement(i, j, Double.parseDouble(br.readLine()));
                 }
             }
         } catch (IOException ex) {
