@@ -12,8 +12,8 @@ public class UserReader {
     private static final UserOutput print = new UserOutput();
     private static final String ERROR = "errorEnter";
 
-    public int enterInt(ResourceBundle rb) {
-        String str = rb.getString(ERROR);
+    public int enterInt(MessageManager manager) {
+        String str = manager.getString(ERROR);
         int value;
         do {
             while (!scanner.hasNextInt()) {
@@ -26,8 +26,8 @@ public class UserReader {
         return value;
     }
 
-    public boolean enterBoolean(ResourceBundle rb) {
-        String str = rb.getString(ERROR);
+    public boolean enterBoolean(MessageManager manager) {
+        String str = manager.getString(ERROR);
         while (!scanner.hasNextBoolean()) {
             logger.error("No valid boolean value was entered");
             print.printMessage(str);

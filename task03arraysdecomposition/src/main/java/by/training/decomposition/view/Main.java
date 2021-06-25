@@ -3,38 +3,34 @@ package by.training.decomposition.view;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
-
 public class Main {
     private static final Logger userLogger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-        Locale locale = Locale.getDefault();
+        MessageManager messageManager = MessageManager.RU;
         UserReader reader = new UserReader();
         UserOutput print = new UserOutput();
         boolean flag = true;
         int mainChoice;
 
         while (flag) {
-            ResourceBundle rb = ResourceBundle.getBundle("langs.interface", locale);
-            String menu = rb.getString("mainMenu");
+            String menu = messageManager.getString("mainMenu");
             print.printMessage(menu);
-            mainChoice = reader.enterInt(rb);
+            mainChoice = reader.enterInt(messageManager);
             switch (mainChoice) {
                 case 1:
                     MatrixMenu matrixMenu = MatrixMenu.getInstance();
-                    locale = matrixMenu.doMatrixOperations(locale);
+                    messageManager = matrixMenu.doMatrixOperations(messageManager);
                     break;
                 case 2:
                     ArrayMenu arrayMenu = ArrayMenu.getInstance();
-                    locale = arrayMenu.doSorting(locale);
+                    messageManager = arrayMenu.doSorting(messageManager);
                     break;
                 case 3:
-                    if ("US".equals(locale.getCountry())) {
-                        locale = new Locale("ru", "RU");
+                    if ("US".equals(messageManager.getManagerCountry())) {
+                        messageManager = MessageManager.RU;
                     } else {
-                        locale = new Locale("en", "US");
+                        messageManager = MessageManager.EN;
                     }
                     break;
                 case 4:

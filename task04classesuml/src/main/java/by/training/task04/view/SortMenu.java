@@ -4,9 +4,6 @@ import by.training.task04.controller.Controller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
-
 public class SortMenu {
     private static final Logger userLogger = LogManager.getLogger(SortMenu.class);
     private static final SortMenu instance = new SortMenu();
@@ -17,15 +14,14 @@ public class SortMenu {
         return instance;
     }
 
-    public Locale sortData(Locale locale) {
+    public MessageManager sortData(MessageManager messageManager) {
         Controller controller = new Controller();
         String message;
         boolean flag = true;
         while (flag) {
-            ResourceBundle rb = ResourceBundle.getBundle("langs.text", locale);
-            String sortMenu = rb.getString("sortMenu");
+            String sortMenu = messageManager.getString("sortMenu");
             print.printMessage(sortMenu);
-            int sortChoice = reader.enterInt(rb);
+            int sortChoice = reader.enterInt(messageManager);
             switch (sortChoice) {
                 case 1:
                     message = controller.executeTask("sort_data-number");
@@ -44,10 +40,10 @@ public class SortMenu {
                     userLogger.debug(message);
                     break;
                 case 5:
-                    if ("US".equals(locale.getCountry())) {
-                        locale = new Locale("ru", "RU");
+                    if ("US".equals(messageManager.getManagerCountry())) {
+                        messageManager = MessageManager.RU;
                     } else {
-                        locale = new Locale("en", "US");
+                        messageManager = MessageManager.EN;
                     }
                     break;
                 case 6:
@@ -58,6 +54,6 @@ public class SortMenu {
                     break;
             }
         }
-        return locale;
+        return messageManager;
     }
 }

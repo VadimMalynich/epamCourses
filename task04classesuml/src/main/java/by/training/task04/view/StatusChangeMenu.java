@@ -4,9 +4,6 @@ import by.training.task04.controller.Controller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
-
 public class StatusChangeMenu {
     private static final Logger userLogger = LogManager.getLogger(StatusChangeMenu.class);
     private static final StatusChangeMenu instance = new StatusChangeMenu();
@@ -19,16 +16,15 @@ public class StatusChangeMenu {
         return instance;
     }
 
-    public Locale changeStatus(Locale locale) {
+    public MessageManager changeStatus(MessageManager messageManager) {
         Controller controller = new Controller();
         boolean flag = true;
         int choice;
         String message;
         while (flag) {
-            ResourceBundle rb = ResourceBundle.getBundle("langs.text", locale);
-            String menu = rb.getString("statusMenu");
+            String menu = messageManager.getString("statusMenu");
             print.printMessage(menu);
-            choice = reader.enterInt(rb);
+            choice = reader.enterInt(messageManager);
             switch (choice) {
                 case 1:
                     message = controller.executeTask("block_activate_all-false");
@@ -40,24 +36,24 @@ public class StatusChangeMenu {
                     break;
                 case 3:
 
-                    String blockId = rb.getString("blockID");
+                    String blockId = messageManager.getString("blockID");
                     print.printMessage(blockId);
-                    accountID = reader.enterInt(rb);
+                    accountID = reader.enterInt(messageManager);
                     message = controller.executeTask("block_activate_by_id-false " + accountID);
                     userLogger.debug(message);
                     break;
                 case 4:
-                    String activeId = rb.getString("activeID");
+                    String activeId = messageManager.getString("activeID");
                     print.printMessage(activeId);
-                    accountID = reader.enterInt(rb);
+                    accountID = reader.enterInt(messageManager);
                     message = controller.executeTask("block_activate_by_id-true " + accountID);
                     userLogger.debug(message);
                     break;
                 case 5:
-                    if ("US".equals(locale.getCountry())) {
-                        locale = new Locale("ru", "RU");
+                    if ("US".equals(messageManager.getManagerCountry())) {
+                        messageManager = MessageManager.RU;
                     } else {
-                        locale = new Locale("en", "US");
+                        messageManager = MessageManager.EN;
                     }
                     break;
                 case 6:
@@ -68,7 +64,7 @@ public class StatusChangeMenu {
                     break;
             }
         }
-        return locale;
+        return messageManager;
     }
 
 }

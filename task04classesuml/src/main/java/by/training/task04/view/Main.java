@@ -4,14 +4,11 @@ import by.training.task04.controller.Controller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
-
 public class Main {
     private static final Logger userLogger = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
-        Locale locale = Locale.getDefault();
+        MessageManager messageManager = MessageManager.RU;
         UserReader reader = new UserReader();
         UserOutput print = new UserOutput();
         Controller controller = new Controller();
@@ -20,35 +17,34 @@ public class Main {
         boolean flag = true;
         int mainChoice;
         while (flag) {
-            ResourceBundle rb = ResourceBundle.getBundle("langs.text", locale);
-            print.printMessage(rb.getString("mainMenu"));
-            mainChoice = reader.enterInt(rb);
+            print.printMessage(messageManager.getString("mainMenu"));
+            mainChoice = reader.enterInt(messageManager);
             switch (mainChoice) {
                 case 1:
                     StatusChangeMenu statusChangeMenu = StatusChangeMenu.getInstance();
-                    locale = statusChangeMenu.changeStatus(locale);
+                    messageManager = statusChangeMenu.changeStatus(messageManager);
                     break;
                 case 2:
                     AccountsSumMenu accountsSumMenu = AccountsSumMenu.getInstance();
-                    locale = accountsSumMenu.calcSum(locale);
+                    messageManager = accountsSumMenu.calcSum(messageManager);
                     break;
                 case 3:
                     SearchMenu searchMenu = SearchMenu.getInstance();
-                    locale = searchMenu.searchData(locale);
+                    messageManager = searchMenu.searchData(messageManager);
                     break;
                 case 4:
                     SortMenu sortMenu = SortMenu.getInstance();
-                    locale = sortMenu.sortData(locale);
+                    messageManager = sortMenu.sortData(messageManager);
                     break;
                 case 5:
                     FilterMenu filterMenu = FilterMenu.getInstance();
-                    locale = filterMenu.filterData(locale);
+                    messageManager = filterMenu.filterData(messageManager);
                     break;
                 case 6:
-                    if ("US".equals(locale.getCountry())) {
-                        locale = new Locale("ru", "RU");
+                    if ("US".equals(messageManager.getManagerCountry())) {
+                        messageManager = MessageManager.RU;
                     } else {
-                        locale = new Locale("en", "US");
+                        messageManager = MessageManager.EN;
                     }
                     break;
                 case 7:

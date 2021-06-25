@@ -4,9 +4,6 @@ import by.training.decomposition.controller.Controller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
-
 public class ArrayMenu {
     private static final Logger userLogger = LogManager.getLogger(ArrayMenu.class);
     private static final ArrayMenu instance = new ArrayMenu();
@@ -23,46 +20,45 @@ public class ArrayMenu {
         return instance;
     }
 
-    public Locale doSorting(Locale locale) {
+    public MessageManager doSorting(MessageManager messageManager) {
         Controller controller = new Controller();
         boolean flag = true;
         int choice;
 
         while (flag) {
-            ResourceBundle rb = ResourceBundle.getBundle("langs.interface", locale);
-            String menu = rb.getString("arrayMenu");
+            String menu = messageManager.getString("arrayMenu");
             print.printMessage(menu);
-            choice = reader.enterInt(rb);
+            choice = reader.enterInt(messageManager);
             switch (choice) {
                 case 1:
-                    enterArrayConfiguration(rb);
+                    enterArrayConfiguration(messageManager);
                     print.printMessage(controller.executeTask("bubble_sort-" + size + " " + isIncreasing));
                     break;
                 case 2:
-                    enterArrayConfiguration(rb);
+                    enterArrayConfiguration(messageManager);
                     print.printMessage(controller.executeTask("shaker_sort-" + size + " " + isIncreasing));
                     break;
                 case 3:
-                    enterArrayConfiguration(rb);
+                    enterArrayConfiguration(messageManager);
                     print.printMessage(controller.executeTask("simple_selection_sort-" + size + " " + isIncreasing));
                     break;
                 case 4:
-                    enterArrayConfiguration(rb);
+                    enterArrayConfiguration(messageManager);
                     print.printMessage(controller.executeTask("insert_sort-" + size + " " + isIncreasing));
                     break;
                 case 5:
-                    enterArrayConfiguration(rb);
+                    enterArrayConfiguration(messageManager);
                     print.printMessage(controller.executeTask("binary_merge_sort-" + size + " " + isIncreasing));
                     break;
                 case 6:
-                    enterArrayConfiguration(rb);
+                    enterArrayConfiguration(messageManager);
                     print.printMessage(controller.executeTask("shell_sort-" + size + " " + isIncreasing));
                     break;
                 case 7:
-                    if ("US".equals(locale.getCountry())) {
-                        locale = new Locale("ru", "RU");
+                    if ("US".equals(messageManager.getManagerCountry())) {
+                        messageManager = MessageManager.RU;
                     } else {
-                        locale = new Locale("en", "US");
+                        messageManager = MessageManager.EN;
                     }
                     break;
                 case 8:
@@ -73,15 +69,15 @@ public class ArrayMenu {
                     break;
             }
         }
-        return locale;
+        return messageManager;
     }
 
-    private void enterArrayConfiguration(ResourceBundle rb) {
-        String sizeArray = rb.getString("enterSize");
+    private void enterArrayConfiguration(MessageManager manager) {
+        String sizeArray = manager.getString("enterSize");
         print.printMessage(sizeArray);
-        size = reader.enterInt(rb);
-        String enterType = rb.getString("sortType");
+        size = reader.enterInt(manager);
+        String enterType = manager.getString("sortType");
         print.printMessage(enterType);
-        isIncreasing = reader.enterBoolean(rb);
+        isIncreasing = reader.enterBoolean(manager);
     }
 }

@@ -3,7 +3,6 @@ package by.training.task04.view;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class UserReader {
@@ -12,8 +11,8 @@ public class UserReader {
     private static final UserOutput print = new UserOutput();
     private static final String ERROR = "errorEnter";
 
-    public int enterInt(ResourceBundle rb) {
-        String str = rb.getString(ERROR);
+    public int enterInt(MessageManager manager) {
+        String str = manager.getString(ERROR);
         while (!scanner.hasNextInt()) {
             logger.error("No valid int value was entered");
             print.printMessage(str);
@@ -22,8 +21,8 @@ public class UserReader {
         return scanner.nextInt();
     }
 
-    public boolean enterBoolean(ResourceBundle rb) {
-        String str = rb.getString(ERROR);
+    public boolean enterBoolean(MessageManager manager) {
+        String str = manager.getString(ERROR);
         while (!scanner.hasNextBoolean()) {
             logger.error("No valid boolean value was entered");
             print.printMessage(str);
@@ -32,8 +31,8 @@ public class UserReader {
         return scanner.nextBoolean();
     }
 
-    public double enterDouble(ResourceBundle rb) {
-        String str = rb.getString(ERROR);
+    public double enterDouble(MessageManager manager) {
+        String str = manager.getString(ERROR);
         while (!scanner.hasNextDouble()) {
             logger.error("No valid double value was entered");
             print.printMessage(str);
@@ -46,8 +45,8 @@ public class UserReader {
         return scanner.nextLine();
     }
 
-    public long enterLong(ResourceBundle rb) {
-        String str = rb.getString(ERROR);
+    public long enterLong(MessageManager manager) {
+        String str = manager.getString(ERROR);
         final long MIN_LONG_VALUE = 1000000000000000l;
         final long MAX_LONG_VALUE = 10000000000000000l;
         long number;

@@ -4,9 +4,6 @@ import by.training.decomposition.controller.Controller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Locale;
-import java.util.ResourceBundle;
-
 public class MatrixMenu {
     private static final Logger userLogger = LogManager.getLogger(MatrixMenu.class);
     private static final MatrixMenu instance = new MatrixMenu();
@@ -23,49 +20,47 @@ public class MatrixMenu {
         return instance;
     }
 
-    public Locale doMatrixOperations(Locale locale) {
+    public MessageManager doMatrixOperations(MessageManager messageManager) {
         Controller controller = new Controller();
         boolean flag = true;
         int choice;
-
         while (flag) {
-            ResourceBundle rb = ResourceBundle.getBundle("langs.interface", locale);
-            String menu = rb.getString("matrixMenu");
+            String menu = messageManager.getString("matrixMenu");
             print.printMessage(menu);
-            choice = reader.enterInt(rb);
+            choice = reader.enterInt(messageManager);
             switch (choice) {
                 case 1:
-                    enterFirstMatrixSizes(rb);
+                    enterFirstMatrixSizes(messageManager);
                     print.printMessage(controller.executeTask("transpose_matrix-" + rowsP + " " + columnsP));
                     break;
                 case 2:
-                    enterFirstMatrixSizes(rb);
-                    String enterValue = rb.getString("enterValue");
+                    enterFirstMatrixSizes(messageManager);
+                    String enterValue = messageManager.getString("enterValue");
                     print.printMessage(enterValue);
-                    int k = reader.enterInt(rb);
+                    int k = reader.enterInt(messageManager);
                     print.printMessage(controller.executeTask("multiply_matrix_on_value-" + rowsP + " " +
                             columnsP + " " + k));
                     break;
                 case 3:
-                    enterTwoMatrices(rb);
+                    enterTwoMatrices(messageManager);
                     print.printMessage(controller.executeTask("multiply_matrices-" + rowsP + " " + columnsP
                             + ";" + rowsQ + " " + columnsQ));
                     break;
                 case 4:
-                    enterTwoMatrices(rb);
+                    enterTwoMatrices(messageManager);
                     print.printMessage(controller.executeTask("sum_or_diff_matrices-" + rowsP + " " + columnsP
                             + ";" + rowsQ + " " + columnsQ + "," + true));
                     break;
                 case 5:
-                    enterTwoMatrices(rb);
+                    enterTwoMatrices(messageManager);
                     print.printMessage(controller.executeTask("sum_or_diff_matrices-" + rowsP + " " + columnsP
                             + ";" + rowsQ + " " + columnsQ + "," + false));
                     break;
                 case 6:
-                    if ("US".equals(locale.getCountry())) {
-                        locale = new Locale("ru", "RU");
+                    if ("US".equals(messageManager.getManagerCountry())) {
+                        messageManager = MessageManager.RU;
                     } else {
-                        locale = new Locale("en", "US");
+                        messageManager = MessageManager.EN;
                     }
                     break;
                 case 7:
@@ -76,33 +71,33 @@ public class MatrixMenu {
                     break;
             }
         }
-        return locale;
+        return messageManager;
     }
 
-    private void enterTwoMatrices(ResourceBundle rb) {
-        String enterFirst = rb.getString("firstMatrix");
+    private void enterTwoMatrices(MessageManager manager) {
+        String enterFirst = manager.getString("firstMatrix");
         print.printMessage(enterFirst);
-        enterFirstMatrixSizes(rb);
-        String enterSecond = rb.getString("secondMatrix");
+        enterFirstMatrixSizes(manager);
+        String enterSecond = manager.getString("secondMatrix");
         print.printMessage(enterSecond);
-        enterSecondMatrixSizes(rb);
+        enterSecondMatrixSizes(manager);
     }
 
-    private void enterFirstMatrixSizes(ResourceBundle rb) {
-        String enterRows = rb.getString("enterRows");
-        String enterColumns = rb.getString("enterColumns");
+    private void enterFirstMatrixSizes(MessageManager manager) {
+        String enterRows = manager.getString("enterRows");
+        String enterColumns = manager.getString("enterColumns");
         print.printMessage(enterRows);
-        rowsP = reader.enterInt(rb);
+        rowsP = reader.enterInt(manager);
         print.printMessage(enterColumns);
-        columnsP = reader.enterInt(rb);
+        columnsP = reader.enterInt(manager);
     }
 
-    private void enterSecondMatrixSizes(ResourceBundle rb) {
-        String enterRows = rb.getString("enterRows");
-        String enterColumns = rb.getString("enterColumns");
+    private void enterSecondMatrixSizes(MessageManager manager) {
+        String enterRows = manager.getString("enterRows");
+        String enterColumns = manager.getString("enterColumns");
         print.printMessage(enterRows);
-        rowsQ = reader.enterInt(rb);
+        rowsQ = reader.enterInt(manager);
         print.printMessage(enterColumns);
-        columnsQ = reader.enterInt(rb);
+        columnsQ = reader.enterInt(manager);
     }
 }
