@@ -13,6 +13,8 @@
         <module>task02loopsandbranches</module>
         <module>task03arraysdecomposition</module>
         <module>task04classesuml</module>
+        <module>task05kickstartchapter</module>
+        <module>task08xml</module>
     </modules>
 
     <properties>

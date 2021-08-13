@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All test suite">
+    <test name="Query for repository">
+        <groups>
+            <run>
+                <include name="findSpecification"/>
+                <include name="sortSpecification"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="by.training.task05.service.impl.repository.TriangleRepositoryTest"/>
+        </classes>
+    </test>
+
+    <test name="Triangles and actions">
+        <classes>
+            <class name="by.training.task05.service.impl.ReadDataServiceImplTest"/>
+            <class name="by.training.task05.service.impl.ValidateDataServiceImplTest"/>
+            <class name="by.training.task05.service.impl.CreateTriangleServiceImplTest"/>
+            <class name="by.training.task05.service.impl.DefineFigureTypeServiceImplTest"/>
+            <class name="by.training.task05.service.impl.CalcFigureParametersServiceImplTest"/>
+        </classes>
+    </test>
+
+    <test name="Observer test">
+        <classes>
+            <class name="by.training.task05.service.impl.observer.ObserverTest"/>
+        </classes>
+    </test>
+</suite>
