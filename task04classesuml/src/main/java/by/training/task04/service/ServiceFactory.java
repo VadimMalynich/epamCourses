@@ -5,13 +5,13 @@ import by.training.task04.service.impl.*;
 public class ServiceFactory {
     private static final ServiceFactory instance = new ServiceFactory();
 
-    CalcAccountsAmountService calcAccountsAmountService = new CalcAccountsAmountServiceImpl();
-    FilterDataService filterDataService = new FilterDataServiceImpl();
-    FindDataService findDataService = new FindDataServiceImpl();
-    GenerateDataService generateDataService = new GenerateDataServiceImpl();
-    ReadFromFileService readFromFileService = new ReadFromFileServiceImpl();
-    SortAccountsService sortAccountsService = new SortAccountsServiceImpl();
-    WorkWithStatusService workWithStatusService = new WorkWithStatusServiceImpl();
+    private final CalcAccountsAmountService calcAccountsAmountService = new CalcAccountsAmountServiceImpl();
+    private final FilterDataService filterDataService = new FilterDataServiceImpl();
+    private final FindDataService findDataService = new FindDataServiceImpl();
+    private final GenerateDataService generateDataService = new GenerateDataServiceImpl();
+    private final ReadFromFileService readFromFileService = new ReadFromFileServiceImpl();
+    private final SortAccountsService sortAccountsService = new SortAccountsServiceImpl();
+    private final WorkWithStatusService workWithStatusService = new WorkWithStatusServiceImpl();
 
     private ServiceFactory() {
     }
