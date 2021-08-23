@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.training.by/bean"
+        xmlns:tns="http://www.training.by/bean"
+        elementFormDefault="qualified">
+
+    <element name="postcards">
+        <complexType>
+            <sequence>
+                <element ref="tns:old-card"
+                         minOccurs="1"
+                         maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="old-card" type="tns:OldCard" abstract="true"></element>
+    <element name="postcard" type="tns:Postcard" substitutionGroup="tns:old-card"></element>
+    <element name="ad-card" type="tns:AdPostcard" substitutionGroup="tns:old-card"></element>
+    <element name="greeting-card" type="tns:GreetingPostcard" substitutionGroup="tns:old-card"></element>
+
+    <complexType name="OldCard">
+        <sequence>
+            <element name="country" type="string"/>
+            <element name="year" type="gYear"/>
+        </sequence>
+        <attribute name="serial-number" type="tns:SerialNumber" use="required"/>
+        <attribute name="valuable" use="optional" default="Тематическая">
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="Историческая"/>
+                    <enumeration value="Коллекционная"/>
+                    <enumeration value="Тематическая"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+    </complexType>
+
+    <simpleType name="SerialNumber">
+        <restriction base="ID">
+            <pattern value="[A-Z]{3}\d{6}"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="Postcard">
+        <complexContent>
+            <extension base="tns:OldCard">
+                <sequence>
+                    <element name="theme" type="string"/>
+                </sequence>
+                <attribute name="author" use="optional"/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="AdPostcard">
+        <complexContent>
+            <extension base="tns:OldCard">
+                <sequence>
+                    <element name="company" type="string"/>
+                    <element name="phone-number" type="tns:PhoneNumber"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="GreetingPostcard">
+        <complexContent>
+            <extension base="tns:OldCard">
+                <attribute name="holiday" type="gMonthDay" use="required"/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <simpleType name="PhoneNumber">
+        <restriction base="positiveInteger">
+            <minInclusive value="1000000"/>
+            <maxInclusive value="9999999"/>
+        </restriction>
+    </simpleType>
+</schema>

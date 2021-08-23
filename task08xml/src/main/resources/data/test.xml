@@ -1,0 +1,75 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<postcards xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.training.by/bean"
+           xsi:schemaLocation="http://www.training.by/bean">
+
+    <ad-card valuable="Коллекционная" serial-number="JSP412478">
+        <country>США</country>
+        <year>2016</year>
+        <company>KFC</company>
+        <phone-number>2115666</phone-number>
+    </ad-card>
+
+    <postcard author="Ленин" valuable="Историческая" serial-number="DHT541233">
+        <country>Беларусь</country>
+        <year>2005</year>
+        <theme>Зима</theme>
+    </postcard>
+
+    <greeting-card holiday="--08-03" valuable="Коллекционная" serial-number="DWL222001">
+        <country>Италия</country>
+        <year>1976</year>
+    </greeting-card>
+
+    <postcard serial-number="ASD521154" valuable="Тематическая">
+        <country>Чехия</country>
+        <year>1966</year>
+        <theme>Архитектура</theme>
+    </postcard>
+
+    <greeting-card holiday="--08-20" serial-number="SSW123444">
+        <country>Россия</country>
+        <year>2015</year>
+    </greeting-card>
+
+    <postcard serial-number="ITL541300" author="Полковец">
+        <country>Казахстан</country>
+        <year>2011</year>
+        <theme>Животные</theme>
+    </postcard>
+
+    <postcard serial-number="GMK215479">
+        <country>Украина</country>
+        <year>2007</year>
+        <theme>Портрет</theme>
+    </postcard>
+
+    <ad-card serial-number="ADX887935" valuable="Тематическая">
+        <country>Беларусь</country>
+        <year>1993</year>
+        <company>Coca cola</company>
+        <phone-number>2140364</phone-number>
+    </ad-card>
+
+ 
+    <postcard serial-number="SSW123344" valuable="Историческая" author="Пикассо">
+        <country>Литва</country>
+        <year>1999</year>
+        <theme>Пейзаж</theme>
+    </postcard>
+
+
+    <greeting-card valuable="Историческая" holiday="--01-01" serial-number="AAA555777">
+        <country>Казахстан</country>
+        <year>2004</year>
+    </greeting-card>
+
+    <ad-card serial-number="SAF548236">
+        <country>Бразилия</country>
+        <year>2019</year>
+        <company>Белмаркет</company>
+        <phone-number>2036522</phone-number>
+    </ad-card>
+
+    
+</postcards>

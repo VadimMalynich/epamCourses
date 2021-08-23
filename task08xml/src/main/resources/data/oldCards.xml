@@ -1,0 +1,97 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<postcards xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.training.by/bean"
+           xsi:schemaLocation="http://www.training.by/bean">
+
+    <greeting-card serial-number="WPS544723" holiday="--02-23">
+        <country>Беларусь</country>
+        <year>2018</year>
+    </greeting-card>
+
+    <ad-card valuable="Тематическая" serial-number="JSP412478">
+        <country>Польша</country>
+        <year>2016</year>
+        <company>KFC</company>
+        <phone-number>2115666</phone-number>
+    </ad-card>
+
+    <postcard author="Малевич" valuable="Историческая" serial-number="DHT541233">
+        <country>Беларусь</country>
+        <year>2005</year>
+        <theme>Фигуры</theme>
+    </postcard>
+
+    <greeting-card holiday="--04-01" serial-number="WDS952314" valuable="Тематическая">
+        <country>Украина</country>
+        <year>2002</year>
+    </greeting-card>
+
+    <greeting-card holiday="--08-03" valuable="Историческая" serial-number="DWL222001">
+        <country>Канада</country>
+        <year>1976</year>
+    </greeting-card>
+
+    <postcard serial-number="ASD521154" valuable="Историческая">
+        <country>Россия</country>
+        <year>1966</year>
+        <theme>Берлинская стена</theme>
+    </postcard>
+
+    <greeting-card holiday="--08-20" serial-number="SSW123444">
+        <country>Германия</country>
+        <year>2015</year>
+    </greeting-card>
+
+    <postcard serial-number="ITL541300" author="Пикассо">
+        <country>Италия</country>
+        <year>2011</year>
+        <theme>Портрет</theme>
+    </postcard>
+
+    <postcard serial-number="GMK215479">
+        <country>Беларусь</country>
+        <year>2007</year>
+        <theme>Пейзаж</theme>
+    </postcard>
+
+    <ad-card serial-number="ADX887935" valuable="Коллекционная">
+        <country>Украина</country>
+        <year>1993</year>
+        <company>Coca cola</company>
+        <phone-number>2140364</phone-number>
+    </ad-card>
+
+    <greeting-card serial-number="QES545482" holiday="--12-25" valuable="Историческая">
+        <country>США</country>
+        <year>1932</year>
+    </greeting-card>
+
+    <postcard serial-number="SSW123344" valuable="Коллекционная" author="Шагал">
+        <country>Беларусь</country>
+        <year>1999</year>
+        <theme>Природа</theme>
+    </postcard>
+
+    <greeting-card serial-number="DWK471111" valuable="Тематическая" holiday="--02-23">
+        <country>Россия</country>
+        <year>2020</year>
+    </greeting-card>
+
+    <greeting-card valuable="Коллекционная" holiday="--01-01" serial-number="AAA555777">
+        <country>Франция</country>
+        <year>2004</year>
+    </greeting-card>
+
+    <ad-card serial-number="SAF548236">
+        <country>Россия</country>
+        <year>2019</year>
+        <company>Евроопт</company>
+        <phone-number>2036522</phone-number>
+    </ad-card>
+
+    <greeting-card valuable="Историческая" serial-number="SXP201000" holiday="--09-11">
+        <country>США</country>
+        <year>2002</year>
+    </greeting-card>
+    
+</postcards>
