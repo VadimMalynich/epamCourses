@@ -15,6 +15,7 @@
         <module>task04classesuml</module>
         <module>task05kickstartchapter</module>
         <module>task08xml</module>
+        <module>task06multithreading</module>
     </modules>
 
     <properties>

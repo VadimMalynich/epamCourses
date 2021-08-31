@@ -15,7 +15,6 @@ public class CreateMatrix {
     private CreateMatrix() {
     }
 
-
     public static Matrix execute(int rows, int columns, String fileName) {
         String response = "Data from file load successful";
         Matrix matrix = null;
