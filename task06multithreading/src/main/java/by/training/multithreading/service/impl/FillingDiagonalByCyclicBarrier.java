@@ -1,7 +1,6 @@
 package by.training.multithreading.service.impl;
 
 import by.training.multithreading.bean.CyclicBarrierThread;
-import by.training.multithreading.bean.Matrix;
 import by.training.multithreading.bean.ThreadValues;
 import by.training.multithreading.service.FillingMatrixDiagonalService;
 

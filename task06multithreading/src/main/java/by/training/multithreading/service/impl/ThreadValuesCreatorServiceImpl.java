@@ -1,10 +1,8 @@
 package by.training.multithreading.service.impl;
 
-import by.training.multithreading.bean.Matrix;
 import by.training.multithreading.bean.ThreadValues;
 import by.training.multithreading.dao.DaoException;
 import by.training.multithreading.dao.DaoFactory;
-import by.training.multithreading.dao.MatrixDao;
 import by.training.multithreading.dao.ThreadValuesDao;
 import by.training.multithreading.service.ServiceException;
 import by.training.multithreading.service.ThreadValuesCreatorService;

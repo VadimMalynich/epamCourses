@@ -73,8 +73,4 @@ public class Matrix {
     public int hashCode() {
         return Arrays.hashCode(a);
     }
-
-    private boolean checkRange(int i, int j) {
-        return (i >= 0 && i < a.length && j >= 0 && j < a[0].length);
-    }
 }

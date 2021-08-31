@@ -8,6 +8,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class CreateFile {
+
+    private CreateFile() {
+    }
+
     public static void createMatrixFile(int elementsAmount, File file) throws DaoException {
         final int MAX_VALUE = 1000;
         final int MIN_VALUE = -1000;

@@ -1,6 +1,5 @@
 package by.training.multithreading.controller.command.impl;
 
-import by.training.multithreading.bean.Matrix;
 import by.training.multithreading.controller.command.Command;
 import by.training.multithreading.service.FillingMatrixDiagonalService;
 import by.training.multithreading.service.ServiceFactory;

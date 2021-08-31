@@ -1,10 +1,8 @@
 package by.training.multithreading.service.impl;
 
 import by.training.multithreading.bean.LockThread;
-import by.training.multithreading.bean.Matrix;
 import by.training.multithreading.bean.ThreadValues;
 import by.training.multithreading.service.FillingMatrixDiagonalService;
-import by.training.multithreading.service.ServiceException;
 
 import java.util.concurrent.locks.ReentrantLock;
 

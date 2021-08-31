@@ -26,7 +26,7 @@ public class CyclicBarrierThread extends Thread {
         try {
             userLogger.debug(Thread.currentThread().getName() + " start work");
             for (int i = 0; i < matrix.getSize(); i++) {
-               barrier.await(100, TimeUnit.MILLISECONDS);
+                barrier.await(100, TimeUnit.MILLISECONDS);
 
                 if (matrix.getElement(i, i).getValue() == 0) {
                     matrix.changeDiagonalElement(i, threadValue);
@@ -35,14 +35,10 @@ public class CyclicBarrierThread extends Thread {
                 TimeUnit.MILLISECONDS.sleep(50);
 
             }
-           // this.barrier.await();
+            // this.barrier.await();
             userLogger.debug(Thread.currentThread().getName() + " end work");
-        } catch (InterruptedException e) {
+        } catch (TimeoutException | BrokenBarrierException | InterruptedException e) {
             userLogger.error(e);
-        } catch (BrokenBarrierException e) {
-            userLogger.error(e);
-        } catch (TimeoutException e) {
-            e.printStackTrace();
         }
     }
 }
