@@ -22,7 +22,6 @@ public class SentenceHandler extends BaseHandler {
     @Override
     public void parse(String text, Composite root) throws ServiceException {
         text = text.trim();
-        StringBuilder builder = new StringBuilder(text);
         String[] strings = pattern.split(text);
         Matcher matcher = pattern.matcher(text);
         List<String> signs = new ArrayList<>();

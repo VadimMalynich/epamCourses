@@ -1,7 +1,6 @@
 package by.training.informationhandling.controller.command.impl;
 
 import by.training.informationhandling.bean.Composite;
-import by.training.informationhandling.bean.Type;
 import by.training.informationhandling.controller.Controller;
 import by.training.informationhandling.controller.command.Command;
 import by.training.informationhandling.service.ServiceException;

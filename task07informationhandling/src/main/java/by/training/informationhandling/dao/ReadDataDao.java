@@ -1,7 +1,6 @@
 package by.training.informationhandling.dao;
 
 import java.io.File;
-import java.util.List;
 
 public interface ReadDataDao {
     /**

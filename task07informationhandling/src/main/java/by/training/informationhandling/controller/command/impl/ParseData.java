@@ -4,18 +4,14 @@ import by.training.informationhandling.bean.Composite;
 import by.training.informationhandling.bean.Type;
 import by.training.informationhandling.controller.Controller;
 import by.training.informationhandling.controller.command.Command;
-import by.training.informationhandling.service.ReadDataService;
 import by.training.informationhandling.service.ServiceException;
 import by.training.informationhandling.service.ServiceFactory;
 import by.training.informationhandling.service.TextParserService;
-import by.training.informationhandling.view.UserOutput;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.security.cert.X509Certificate;
-
 public class ParseData implements Command {
-    private static final Logger userLogger = LogManager.getLogger(ReadData.class);
+    private static final Logger userLogger = LogManager.getLogger(ParseData.class);
 
     @Override
     public String execute(String request) {

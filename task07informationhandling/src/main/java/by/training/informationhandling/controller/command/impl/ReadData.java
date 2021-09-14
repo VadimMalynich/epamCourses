@@ -4,7 +4,6 @@ import by.training.informationhandling.controller.command.Command;
 import by.training.informationhandling.service.ReadDataService;
 import by.training.informationhandling.service.ServiceException;
 import by.training.informationhandling.service.ServiceFactory;
-import by.training.informationhandling.view.UserOutput;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

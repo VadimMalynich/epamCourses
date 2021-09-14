@@ -1,6 +1,7 @@
 package by.training.informationhandling.bean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Composite implements Component {
     private Type type;
@@ -22,7 +23,7 @@ public class Composite implements Component {
         return type;
     }
 
-    public ArrayList<Component> getComponents() {
+    public List<Component> getComponents() {
         return components;
     }
 

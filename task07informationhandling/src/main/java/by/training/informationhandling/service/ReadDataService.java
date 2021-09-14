@@ -1,7 +1,6 @@
 package by.training.informationhandling.service;
 
 import java.io.File;
-import java.util.List;
 
 public interface ReadDataService {
     /**

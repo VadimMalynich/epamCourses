@@ -16,9 +16,8 @@ public class SortingParagraphsService implements SortingTextPartsService {
         }
         Map<String, Integer> hashMap = new HashMap<>();
         getParagraphs(composite.getComponents(), hashMap);
-        List<String> list = hashMap.entrySet().stream().sorted(Map.Entry.comparingByValue())
+        return hashMap.entrySet().stream().sorted(Map.Entry.comparingByValue())
                 .map(s -> s.getKey()).collect(Collectors.toList());
-        return list;
     }
 
     private void getParagraphs(List<Component> components, Map<String, Integer> map) {

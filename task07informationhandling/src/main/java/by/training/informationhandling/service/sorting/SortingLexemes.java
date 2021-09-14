@@ -42,7 +42,7 @@ public class SortingLexemes implements SortLexemesService {
                 hashMap.put(s, count);
             }
             StringBuilder builder = new StringBuilder();
-            List<String> temp = hashMap.entrySet().stream().filter((e) -> e.getValue() > 0).sorted(Map.Entry.comparingByValue()).
+            List<String> temp = hashMap.entrySet().stream().filter(e -> e.getValue() > 0).sorted(Map.Entry.comparingByValue()).
                     map(s -> s.getKey()).collect(Collectors.toList());
             Collections.reverse(temp);
             temp.stream().forEach(s -> builder.append(s).append(" "));
