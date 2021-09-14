@@ -16,6 +16,7 @@
         <module>task05kickstartchapter</module>
         <module>task08xml</module>
         <module>task06multithreading</module>
+        <module>task07informationhandling</module>
     </modules>
 
     <properties>
